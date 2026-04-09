@@ -1,96 +1,190 @@
-<!-- ========================= contact.html ========================= -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — OrbitUI | Ankit Raj Maurya</title>
+  <meta name="description" content="Get in touch with Ankit Raj Maurya — full-stack developer. Email, phone, and social links." />
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-<style>
-body{
-background:black;
-color:white;
-font-family:Poppins;
-}
-
-/* Navbar */
-nav{
-display:flex;justify-content:space-between;
-padding:15px 40px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-}
-nav h1{font-family:Orbitron;color:#00eaff;}
-
-.card{
-margin:20px;
-padding:20px;
-border-radius:15px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-}
-
-form{
-display:flex;
-flex-direction:column;
-gap:10px;
-padding:20px;
-}
-input,textarea{
-padding:10px;
-border:none;
-border-radius:8px;
-}
-.btn{
-background:linear-gradient(45deg,#00eaff,#7b00ff);
-padding:10px;
-border:none;
-cursor:pointer;
-color:white;
-}
-</style>
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<nav>
-<h1>OrbitUI</h1>
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-</nav>
+  <!-- Page Transition Overlay -->
+  <div id="page-transition"></div>
 
-<h1 style="text-align:center;">Get in Touch</h1>
+  <!-- Stars Canvas -->
+  <canvas id="stars-canvas"></canvas>
 
-<div class="card">
-<p>Email: ankit5242raj1@outlook.com</p>
-<p>Phone: +91 9279057573</p>
-<p>Location: Muzaffarpur, Bihar, India</p>
-</div>
+  <!-- =====================================================================
+       NAVBAR
+  ====================================================================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">⊛ OrbitUI</a>
 
-<form onsubmit="sendMsg(event)">
-<input placeholder="Name" required>
-<input placeholder="Email" required>
-<textarea placeholder="Message"></textarea>
-<button class="btn">Send Message</button>
-<p id="msg" style="display:none;color:#00ff9d;">Message Sent 🚀</p>
-</form>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
 
-<div class="card">
-<p><a href="https://github.com/AnkitRajMaurya" target="_blank">GitHub</a></p>
-<p><a href="https://ankitrajmaurya.github.io/Portfolio/" target="_blank">Portfolio</a></p>
-<p><a href="https://in.linkedin.com/in/ankitrajmaurya" target="_blank">LinkedIn</a></p>
-</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="missions.html">🚀 Missions</a></li>
+      <li><a href="gallery.html">🌌 Gallery</a></li>
+      <li><a href="booking.html">🎫 Booking</a></li>
+      <li><a href="about.html">👨‍💻 About</a></li>
+      <li><a href="contact.html" class="active">✉️ Contact</a></li>
+    </ul>
+  </nav>
 
-<script>
-function sendMsg(e){
-e.preventDefault();
-document.getElementById("msg").style.display="block";
-}
-</script>
+  <!-- =====================================================================
+       CONTACT HERO
+  ====================================================================== -->
+  <section id="contact-hero">
+    <div class="container">
+      <h1 class="section-title reveal">Get in Touch</h1>
+      <p class="section-subtitle reveal">
+        I'm always open to new projects, creative ideas, or opportunities.<br />
+        Feel free to reach out anytime.
+      </p>
+    </div>
+  </section>
 
+  <!-- =====================================================================
+       CONTACT MAIN
+  ====================================================================== -->
+  <section id="contact-main">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- ── LEFT: Contact Info + Social Links ── -->
+        <div>
+          <div class="contact-info">
+
+            <a href="mailto:ankit5242raj1@outlook.com" class="info-card reveal">
+              <div class="info-icon">✉️</div>
+              <div>
+                <p class="info-text-label">Email</p>
+                <p class="info-text-value">ankit5242raj1@outlook.com</p>
+              </div>
+            </a>
+
+            <a href="tel:+919279057573" class="info-card reveal">
+              <div class="info-icon">📞</div>
+              <div>
+                <p class="info-text-label">Phone</p>
+                <p class="info-text-value">+91 9279057573</p>
+              </div>
+            </a>
+
+            <div class="info-card reveal" style="cursor:default;">
+              <div class="info-icon">📍</div>
+              <div>
+                <p class="info-text-label">Location</p>
+                <p class="info-text-value">Muzaffarpur, Bihar, India</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-section reveal" style="margin-top:2rem;">
+            <p class="social-label">Find me online</p>
+            <div class="social-grid">
+
+              <a href="https://github.com/AnkitRajMaurya"
+                 target="_blank" rel="noopener noreferrer"
+                 class="social-card" id="github-link">
+                <span class="s-icon">🐙</span>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://ankitrajmaurya.github.io/Portfolio/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="social-card" id="portfolio-link">
+                <span class="s-icon">🧑‍🚀</span>
+                <span>Portfolio</span>
+              </a>
+
+              <a href="https://in.linkedin.com/in/ankitrajmaurya"
+                 target="_blank" rel="noopener noreferrer"
+                 class="social-card" id="linkedin-link">
+                <span class="s-icon">💼</span>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="mailto:ankit5242raj1@outlook.com"
+                 class="social-card" id="mail-link">
+                <span class="s-icon">✉️</span>
+                <span>Mail Me</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RIGHT: Contact Form ── -->
+        <div class="contact-form-wrap reveal">
+          <h2 class="form-title">✉️ Send a Message</h2>
+
+          <form id="contact-form" novalidate>
+
+            <div class="cform-group">
+              <label for="c-name">Your Name</label>
+              <input type="text" id="c-name" placeholder="Ankit Raj Maurya" />
+              <span class="cform-error" id="cerr-name">Please enter your name.</span>
+            </div>
+
+            <div class="cform-group">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" placeholder="you@space.io" />
+              <span class="cform-error" id="cerr-email">Please enter a valid email.</span>
+            </div>
+
+            <div class="cform-group">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" rows="6"
+                placeholder="Tell me about your project or just say hi 👋"></textarea>
+              <span class="cform-error" id="cerr-message">
+                Please write a message (min 10 characters).
+              </span>
+            </div>
+
+            <button type="submit" class="form-send-btn" id="send-btn">
+              Send Message 🚀
+            </button>
+
+          </form>
+
+          <!-- Success state (shown after valid submit) -->
+          <div id="c-success">
+            <div class="cs-icon">🎉</div>
+            <h3 class="cs-title">Message Sent!</h3>
+            <p class="cs-text">
+              Thanks for reaching out! I'll get back to you within 24 hours. Stay stellar! 🌌
+            </p>
+          </div>
+
+        </div>
+        <!-- end contact-form-wrap -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer>
+    <p>© 2026 <strong>OrbitUI</strong> — Built by <a href="about.html">Ankit Raj Maurya</a>. All rights reserved.</p>
+  </footer>
+
+  <!-- Global Script -->
+  <script src="main.js"></script>
 </body>
 </html>

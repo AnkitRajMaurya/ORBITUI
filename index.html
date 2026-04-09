@@ -1,165 +1,299 @@
-<!-- ========================= index.html ========================= -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OrbitUI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbitUI — Book Your Seat to Space</title>
+  <meta name="description"
+    content="OrbitUI is a futuristic space tourism platform. Book your journey to the Moon, Mars, or the ISS today." />
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:'Poppins',sans-serif;
-color:#fff;
-background:black;
-overflow-x:hidden;
-}
-
-/* Space Background */
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa') center/cover no-repeat;
-animation:move 80s linear infinite;
-z-index:-2;
-}
-body::after{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:rgba(0,0,20,0.6);
-z-index:-1;
-}
-@keyframes move{
-0%{transform:translateY(0);}
-100%{transform:translateY(-600px);}
-}
-
-/* Navbar */
-nav{
-position:sticky;top:0;
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 40px;
-backdrop-filter:blur(15px);
-background:rgba(255,255,255,0.05);
-border-bottom:1px solid rgba(255,255,255,0.1);
-}
-nav h1{font-family:'Orbitron';color:#00eaff;}
-nav a{margin:0 10px;color:#fff;text-decoration:none;}
-nav a:hover{color:#00eaff;}
-
-/* Hero */
-.hero{text-align:center;padding:100px 20px;}
-.hero h1{font-family:'Orbitron';font-size:3rem;}
-.hero button{
-margin-top:20px;
-padding:12px 30px;
-border-radius:30px;
-border:none;
-background:linear-gradient(45deg,#00eaff,#7b00ff);
-color:#fff;
-box-shadow:0 0 20px #00eaff;
-cursor:pointer;
-}
-
-/* Cards */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-padding:40px;
-}
-.card{
-border-radius:20px;
-overflow:hidden;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,0.1);
-transition:.4s;
-}
-.card img{width:100%;height:200px;object-fit:cover;}
-.card .content{padding:20px;}
-.card:hover{transform:translateY(-10px);box-shadow:0 0 25px #00eaff;}
-
-/* Form */
-.form-box{
-margin:40px;
-padding:30px;
-border-radius:20px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
-}
-form{display:grid;gap:10px;}
-input,select{padding:10px;border:none;border-radius:8px;}
-.btn{
-padding:12px;
-border:none;
-border-radius:25px;
-background:linear-gradient(45deg,#00eaff,#7b00ff);
-color:white;
-cursor:pointer;
-}
-.success{display:none;color:#00ff9d;text-align:center;}
-</style>
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<nav>
-<h1>OrbitUI</h1>
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-</nav>
+  <!-- Page Transition Overlay -->
+  <div id="page-transition"></div>
 
-<section class="hero">
-<h1>Book Your Seat to Space</h1>
-<p>Experience the future of travel beyond Earth</p>
-<button onclick="scrollForm()">Explore Destinations</button>
-</section>
+  <!-- Stars Canvas -->
+  <canvas id="stars-canvas"></canvas>
 
-<section class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"><div class="content">Moon<br>$250,000</div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1614729939124-032f0d4a4b82"><div class="content">Mars<br>$500,000</div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1580428180120-3aef6d3a6c38"><div class="content">ISS<br>$350,000</div></div>
-</section>
+  <!-- =====================================================================
+       NAVBAR
+  ====================================================================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo" id="nav-logo-link">⊛ OrbitUI</a>
 
-<section class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1581093588401-22e1c6cbaef0"><div class="content">Economy</div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1"><div class="content">Business</div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1541872703-1cfa3c0e8b61"><div class="content">Elite Zero Gravity</div></div>
-</section>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
 
-<div class="form-box" id="form">
-<h2 style="text-align:center;">Reserve Your Seat</h2>
-<form id="booking">
-<input id="name" placeholder="Full Name">
-<input id="email" placeholder="Email Address">
-<select><option>Moon</option><option>Mars</option><option>ISS</option></select>
-<input type="date">
-<select><option>Economy</option><option>Business</option><option>Elite</option></select>
-<input type="number" placeholder="Passengers">
-<button class="btn">Launch Booking 🚀</button>
-<p class="success" id="success">🚀 Booking Successful!</p>
-</form>
-</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active" id="nav-home">🏠 Home</a></li>
+      <li><a href="missions.html" id="nav-missions">🚀 Missions</a></li>
+      <li><a href="gallery.html" id="nav-gallery">🌌 Gallery</a></li>
+      <li><a href="booking.html" id="nav-booking">🎫 Booking</a></li>
+      <li><a href="about.html" id="nav-about">👨‍💻 About</a></li>
+      <li><a href="contact.html" id="nav-contact">✉️ Contact</a></li>
+    </ul>
+  </nav>
 
-<script>
-function scrollForm(){document.getElementById("form").scrollIntoView({behavior:"smooth"});}
-window.onload=()=>{document.getElementById("name").value="Astronaut";}
-document.getElementById("booking").addEventListener("submit",function(e){
-e.preventDefault();
-document.getElementById("success").style.display="block";
-});
-</script>
+  <!-- =====================================================================
+       HERO SECTION
+  ====================================================================== -->
+  <section id="hero">
+    <!-- Decorative orbit rings -->
+    <div class="hero-orbit hero-orbit-1">
+      <div class="hero-planet"></div>
+    </div>
+    <div class="hero-orbit hero-orbit-2"></div>
+    <div class="hero-orbit hero-orbit-3"></div>
 
+    <!-- Hero video/image overlay -->
+    <div class="hero-bg-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="dot"></span>Now Accepting 2026 Bookings
+      </div>
+      <h1 class="hero-title">Book Your Seat<br />to Space</h1>
+      <p class="hero-sub reveal typewriter-text" id="hero-typing-text">
+        Experience the universe beyond Earth's limits. Journey to the Moon, orbit Mars,
+        or dock with the ISS aboard state-of-the-art spacecraft.
+      </p>
+      <br>
+      <div class="hero-actions">
+        <a href="booking.html" class="hero-cta" id="hero-book-btn">🚀 Start Your Journey</a>
+        <a href="missions.html" class="hero-cta-secondary" id="hero-missions-btn">🔭 Explore Missions</a>
+      </div>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">3</span>
+          <span class="hero-stat-label">Destinations</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">2,400+</span>
+          <span class="hero-stat-label">Missions Planned</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">100%</span>
+          <span class="hero-stat-label">Safe Return</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">∞</span>
+          <span class="hero-stat-label">Light Years Ahead</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator" id="hero-scroll-btn">
+      <span class="scroll-label">Scroll to Explore</span>
+      <div class="scroll-arrow">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       WHY ORBITUI — FEATURE HIGHLIGHTS
+  ====================================================================== -->
+  <section id="why-orbitui">
+    <div class="container">
+      <div class="features-strip">
+        <a href="booking.html" class="feature-item reveal" id="feat-safety">
+          <span class="feat-icon">🛡️</span>
+          <div>
+            <h4 class="feat-title">Mission-Grade Safety</h4>
+            <p class="feat-desc">NASA-certified life support & re-entry systems</p>
+          </div>
+        </a>
+        <div class="feat-sep"></div>
+        <a href="gallery.html" class="feature-item reveal" id="feat-views">
+          <span class="feat-icon">🌌</span>
+          <div>
+            <h4 class="feat-title">Breathtaking Views</h4>
+            <p class="feat-desc">360° panoramic cupola windows at orbit altitude</p>
+          </div>
+        </a>
+        <div class="feat-sep"></div>
+        <a href="booking.html" class="feature-item reveal" id="feat-zero-g">
+          <span class="feat-icon">🧘</span>
+          <div>
+            <h4 class="feat-title">Zero-G Experience</h4>
+            <p class="feat-desc">Unparalleled weightlessness from day one</p>
+          </div>
+        </a>
+        <div class="feat-sep"></div>
+        <a href="contact.html" class="feature-item reveal" id="feat-support">
+          <span class="feat-icon">📡</span>
+          <div>
+            <h4 class="feat-title">24/7 Mission Control</h4>
+            <p class="feat-desc">Real-time support from expert ground teams</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DESTINATIONS SECTION
+  ====================================================================== -->
+  <section id="destinations">
+    <div class="container">
+      <h2 class="section-title reveal">Destinations</h2>
+      <p class="section-subtitle reveal">Choose your next frontier — click a card to book</p>
+
+      <div class="destinations-grid">
+
+        <!-- Moon -->
+        <a href="booking.html?dest=Moon" class="dest-card reveal" data-dest="Moon" id="dest-card-moon">
+          <span class="dest-tag">3 Days</span>
+          <span class="dest-emoji">🌕</span>
+          <h3 class="dest-name">The Moon</h3>
+          <p class="dest-desc">
+            Orbit Earth's natural satellite, walk on the lunar surface, and witness
+            Earthrise from 384,400 km away.
+          </p>
+          <div class="dest-price">$250,000</div>
+          <div class="dest-book-btn">🚀 Book This Mission</div>
+        </a>
+
+        <!-- Mars -->
+        <a href="booking.html?dest=Mars" class="dest-card reveal" data-dest="Mars" style="animation-delay:0.5s" id="dest-card-mars">
+          <span class="dest-tag">7 Months</span>
+          <span class="dest-emoji">🔴</span>
+          <h3 class="dest-name">Mars</h3>
+          <p class="dest-desc">
+            Be among the first humans to set foot on the Red Planet.
+            Explore Olympus Mons and Valles Marineris.
+          </p>
+          <div class="dest-price">$500,000</div>
+          <div class="dest-book-btn">🚀 Book This Mission</div>
+        </a>
+
+        <!-- ISS -->
+        <a href="booking.html?dest=ISS" class="dest-card reveal" data-dest="ISS" style="animation-delay:1s" id="dest-card-iss">
+          <span class="dest-tag">14 Days</span>
+          <span class="dest-emoji">🛸</span>
+          <h3 class="dest-name">ISS</h3>
+          <p class="dest-desc">
+            Dock with the International Space Station, conduct experiments in
+            microgravity, and gaze at Earth below.
+          </p>
+          <div class="dest-price">$350,000</div>
+          <div class="dest-book-btn">🚀 Book This Mission</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CABIN CLASS SECTION
+  ====================================================================== -->
+  <section id="cabin">
+    <div class="container">
+      <h2 class="section-title reveal">Cabin Classes</h2>
+      <p class="section-subtitle reveal">Pick the comfort level that suits your journey — click to book</p>
+
+      <div class="cabin-grid">
+
+        <a href="booking.html?cabin=Economy" class="cabin-card reveal" id="cabin-economy">
+          <div class="cabin-icon">🪑</div>
+          <h3 class="cabin-name">Economy</h3>
+          <ul class="cabin-features">
+            <li>Standard zero-G seat</li>
+            <li>Meal rations included</li>
+            <li>Shared observation deck</li>
+            <li>Basic life support kit</li>
+            <li>Communal sleeping pods</li>
+          </ul>
+          <div class="cabin-cta">Select Economy →</div>
+        </a>
+
+        <a href="booking.html?cabin=Business" class="cabin-card featured reveal" id="cabin-business">
+          <div class="cabin-icon">💼</div>
+          <h3 class="cabin-name">Business</h3>
+          <ul class="cabin-features">
+            <li>Reclining zero-G chair</li>
+            <li>Gourmet space meals</li>
+            <li>Priority observation window</li>
+            <li>Advanced life support</li>
+            <li>Semi-private sleep bay</li>
+          </ul>
+          <div class="cabin-cta">Select Business →</div>
+        </a>
+
+        <a href="booking.html?cabin=Elite" class="cabin-card reveal" id="cabin-elite">
+          <div class="cabin-icon">🌌</div>
+          <h3 class="cabin-name">Elite Zero Gravity</h3>
+          <ul class="cabin-features">
+            <li>Full-float luxury suite</li>
+            <li>Chef-crafted cosmic menu</li>
+            <li>360° panoramic cupola</li>
+            <li>Personal mission concierge</li>
+            <li>Private EVA spacewalk</li>
+          </ul>
+          <div class="cabin-cta">Select Elite →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       QUICK LINKS / CTA BANNER
+  ====================================================================== -->
+  <section id="cta-banner">
+    <div class="container">
+      <div class="cta-banner-inner reveal">
+        <div class="cta-banner-text">
+          <h2 class="cta-banner-title">Ready to leave Earth behind?</h2>
+          <p class="cta-banner-sub">Join thousands of future space travelers on the OrbitUI waitlist.</p>
+        </div>
+        <div class="cta-banner-btns">
+          <a href="booking.html" class="hero-cta" id="cta-book-now">🎫 Book Now</a>
+          <a href="contact.html" class="hero-cta-secondary" id="cta-contact">✉️ Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html" id="footer-home">Home</a>
+      <a href="missions.html" id="footer-missions">Missions</a>
+      <a href="gallery.html" id="footer-gallery">Gallery</a>
+      <a href="booking.html" id="footer-booking">Booking</a>
+      <a href="about.html" id="footer-about">About</a>
+      <a href="contact.html" id="footer-contact">Contact</a>
+    </div>
+    <p>© 2026 <strong>OrbitUI</strong> — A project by <a href="about.html" id="footer-author">Ankit Raj Maurya</a>. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Global Script -->
+  <script src="main.js"></script>
 </body>
+
 </html>

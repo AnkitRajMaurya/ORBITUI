@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missions — OrbitUI | Space Missions</title>
+  <meta name="description" content="Explore upcoming and past OrbitUI space missions. Moon landings, Mars expeditions, ISS docking and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="page-transition"></div>
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">⊛ OrbitUI</a>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="missions.html" class="active">🚀 Missions</a></li>
+      <li><a href="gallery.html">🌌 Gallery</a></li>
+      <li><a href="booking.html">🎫 Booking</a></li>
+      <li><a href="about.html">👨‍💻 About</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="missions-hero">
+    <div class="missions-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+      <div class="mission-badge reveal">🛰️ &nbsp; MISSION CONTROL ACTIVE</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.2rem,6vw,4.5rem); -webkit-text-fill-color:transparent; background:linear-gradient(135deg,#fff,#00d4ff,#a855f7); -webkit-background-clip:text; background-clip:text; margin-bottom:1rem;">
+        Space Missions
+      </h1>
+      <p class="section-subtitle reveal" style="max-width:600px;margin:0 auto;">
+        Chart humanity's boldest journeys — past, present, and future.
+        Every mission is a step further into the cosmos. ✦ ✧ ⋆ ★
+      </p>
+
+      <!-- Stats row -->
+      <div class="stats-row reveal">
+        <div class="stat-box">
+          <span class="stat-num">12</span>
+          <span class="stat-label">🚀 Missions Launched</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">847</span>
+          <span class="stat-label">🧑‍🚀 Astronauts Trained</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">3</span>
+          <span class="stat-label">🪐 Destinations</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">99.7%</span>
+          <span class="stat-label">✅ Safety Record</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UPCOMING MISSIONS ── -->
+  <section id="upcoming-missions">
+    <div class="container">
+      <h2 class="section-title reveal">🛸 Upcoming Missions</h2>
+      <p class="section-subtitle reveal">Your next adventure awaits among the stars ✦</p>
+
+      <div class="missions-grid">
+
+        <!-- Mission 1 -->
+        <div class="mission-card reveal">
+          <div class="mission-card-img" style="background:linear-gradient(135deg,#1a0533,#0d1b4b);display:flex;align-items:center;justify-content:center;font-size:5rem;">🌕</div>
+          <div class="mission-card-body">
+            <div class="mission-status status-open">● OPEN</div>
+            <h3 class="mission-name">Lunar Odyssey I</h3>
+            <p class="mission-dest">🌕 The Moon &nbsp;·&nbsp; ✈️ 3 Days</p>
+            <p class="mission-desc">Orbit and land on the lunar surface. Witness the first human footsteps since Apollo. Walk on regolith, collect samples, and gaze back at Earth rising over the crater rim.</p>
+            <div class="mission-meta">
+              <span>📅 Launch: Aug 2026</span>
+              <span>🪑 Seats: 6</span>
+              <span>💰 $250,000</span>
+            </div>
+            <div class="mission-symbols">☄ ✦ ✧ ⊛ ⊙ ★ ⭐</div>
+            <a href="booking.html" class="mission-book-btn">Book Seat 🚀</a>
+          </div>
+        </div>
+
+        <!-- Mission 2 -->
+        <div class="mission-card reveal">
+          <div class="mission-card-img" style="background:linear-gradient(135deg,#2a0a0a,#1a0505);display:flex;align-items:center;justify-content:center;font-size:5rem;">🔴</div>
+          <div class="mission-card-body">
+            <div class="mission-status status-limited">◐ LIMITED</div>
+            <h3 class="mission-name">Ares Pioneer</h3>
+            <p class="mission-dest">🔴 Mars &nbsp;·&nbsp; ✈️ 7 Months</p>
+            <p class="mission-desc">Humanity's greatest leap. Land on the Red Planet, explore Olympus Mons, drive a rover across Valles Marineris, and plant your flag 225 million km from home.</p>
+            <div class="mission-meta">
+              <span>📅 Launch: Jan 2027</span>
+              <span>🪑 Seats: 4</span>
+              <span>💰 $500,000</span>
+            </div>
+            <div class="mission-symbols">♈ ♂ ⊕ ✦ ⋆ ❋ ✯</div>
+            <a href="booking.html" class="mission-book-btn">Book Seat 🚀</a>
+          </div>
+        </div>
+
+        <!-- Mission 3 -->
+        <div class="mission-card reveal">
+          <div class="mission-card-img" style="background:linear-gradient(135deg,#001a1a,#003355);display:flex;align-items:center;justify-content:center;font-size:5rem;">🛸</div>
+          <div class="mission-card-body">
+            <div class="mission-status status-open">● OPEN</div>
+            <h3 class="mission-name">Station Alpha</h3>
+            <p class="mission-dest">🛸 ISS &nbsp;·&nbsp; ✈️ 14 Days</p>
+            <p class="mission-desc">Live and work aboard the International Space Station. Conduct real microgravity experiments, perform an EVA spacewalk, and experience 16 sunrises every day.</p>
+            <div class="mission-meta">
+              <span>📅 Launch: May 2026</span>
+              <span>🪑 Seats: 3</span>
+              <span>💰 $350,000</span>
+            </div>
+            <div class="mission-symbols">⊗ ⊞ ⊠ ⋆ ✦ ◈ ⊙</div>
+            <a href="booking.html" class="mission-book-btn">Book Seat 🚀</a>
+          </div>
+        </div>
+
+        <!-- Mission 4 -->
+        <div class="mission-card reveal">
+          <div class="mission-card-img" style="background:linear-gradient(135deg,#0a001a,#1a0533);display:flex;align-items:center;justify-content:center;font-size:5rem;">🪐</div>
+          <div class="mission-card-body">
+            <div class="mission-status status-soon">⏳ COMING SOON</div>
+            <h3 class="mission-name">Saturn Flyby</h3>
+            <p class="mission-dest">🪐 Saturn Orbit &nbsp;·&nbsp; ✈️ 24 Months</p>
+            <p class="mission-desc">A once-in-a-lifetime passage through Saturn's iconic ring system. Photograph its moons — Titan, Enceladus — up close in the most ambitious human spaceflight ever.</p>
+            <div class="mission-meta">
+              <span>📅 Launch: 2029</span>
+              <span>🪑 Seats: 2</span>
+              <span>💰 $2,000,000</span>
+            </div>
+            <div class="mission-symbols">♄ ☄ ✰ ❊ ⊛ ✦ ⋆</div>
+            <a href="contact.html" class="mission-book-btn" style="background:linear-gradient(135deg,#a855f7,#7c3aed);">Express Interest ✦</a>
+          </div>
+        </div>
+
+        <!-- Mission 5 -->
+        <div class="mission-card reveal">
+          <div class="mission-card-img" style="background:linear-gradient(135deg,#001a0a,#003322);display:flex;align-items:center;justify-content:center;font-size:5rem;">🌙</div>
+          <div class="mission-card-body">
+            <div class="mission-status status-open">● OPEN</div>
+            <h3 class="mission-name">Lunar Orbit Lounge</h3>
+            <p class="mission-dest">🌙 Lunar Orbit &nbsp;·&nbsp; ✈️ 7 Days</p>
+            <p class="mission-desc">No landing — pure orbit luxury. Circle the Moon 112 times over 7 days aboard OrbitUI's elite cruise vessel. Zero-gravity pool, gourmet meals, infinite stargazing.</p>
+            <div class="mission-meta">
+              <span>📅 Launch: Oct 2026</span>
+              <span>🪑 Seats: 8</span>
+              <span>💰 $180,000</span>
+            </div>
+            <div class="mission-symbols">🌛 🌜 ☀ ✦ ⋆ ★ ✧</div>
+            <a href="booking.html" class="mission-book-btn">Book Seat 🚀</a>
+          </div>
+        </div>
+
+        <!-- Mission 6 -->
+        <div class="mission-card reveal">
+          <div class="mission-card-img" style="background:linear-gradient(135deg,#1a1a00,#2a2200);display:flex;align-items:center;justify-content:center;font-size:5rem;">☀️</div>
+          <div class="mission-card-body">
+            <div class="mission-status status-soon">⏳ COMING SOON</div>
+            <h3 class="mission-name">Solar Observer</h3>
+            <p class="mission-dest">☀️ Solar Orbit &nbsp;·&nbsp; ✈️ 6 Months</p>
+            <p class="mission-desc">Approach within 10 million km of the Sun aboard our shielded observation vessel. Watch solar flares and coronal mass ejections in real-time from humanity's closest vantage point.</p>
+            <div class="mission-meta">
+              <span>📅 Launch: 2028</span>
+              <span>🪑 Seats: 4</span>
+              <span>💰 $800,000</span>
+            </div>
+            <div class="mission-symbols">☀ ♌ α β γ ✦ ⊙</div>
+            <a href="contact.html" class="mission-book-btn" style="background:linear-gradient(135deg,#a855f7,#7c3aed);">Express Interest ✦</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MISSION PHASES ── -->
+  <section id="mission-phases" style="background:radial-gradient(ellipse at center, rgba(0,212,255,0.05) 0%, transparent 70%);">
+    <div class="container">
+      <h2 class="section-title reveal">⚙️ Mission Phases</h2>
+      <p class="section-subtitle reveal">Every journey follows the same path to the stars ✦ ✧ ⋆</p>
+
+      <div class="phases-track reveal">
+        <div class="phase-step">
+          <div class="phase-icon">📋</div>
+          <div class="phase-num">01</div>
+          <h4 class="phase-title">Registration</h4>
+          <p class="phase-desc">Submit your application and medical clearance</p>
+        </div>
+        <div class="phase-arrow">→</div>
+        <div class="phase-step">
+          <div class="phase-icon">🏋️</div>
+          <div class="phase-num">02</div>
+          <h4 class="phase-title">Training</h4>
+          <p class="phase-desc">6-month intensive zero-G and survival training</p>
+        </div>
+        <div class="phase-arrow">→</div>
+        <div class="phase-step">
+          <div class="phase-icon">🚀</div>
+          <div class="phase-num">03</div>
+          <h4 class="phase-title">Launch</h4>
+          <p class="phase-desc">T-minus ignition from Cape Canaveral</p>
+        </div>
+        <div class="phase-arrow">→</div>
+        <div class="phase-step">
+          <div class="phase-icon">🌌</div>
+          <div class="phase-num">04</div>
+          <h4 class="phase-title">Mission</h4>
+          <p class="phase-desc">Live your cosmic adventure among the stars</p>
+        </div>
+        <div class="phase-arrow">→</div>
+        <div class="phase-step">
+          <div class="phase-icon">🏠</div>
+          <div class="phase-num">05</div>
+          <h4 class="phase-title">Return</h4>
+          <p class="phase-desc">Safe splashdown and hero's welcome home</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAST MISSIONS ── -->
+  <section id="past-missions">
+    <div class="container">
+      <h2 class="section-title reveal">🏆 Past Missions</h2>
+      <p class="section-subtitle reveal">Milestones etched in the stars ★ ✦ ⭐</p>
+
+      <div class="past-grid">
+        <div class="past-card reveal">
+          <span class="past-year">2024</span>
+          <span class="past-icon">🌕</span>
+          <h4 class="past-title">Artemis Revival</h4>
+          <p class="past-desc">First commercial lunar landing. 4 passengers. 5 days.</p>
+          <span class="past-tag">✅ SUCCESS</span>
+        </div>
+        <div class="past-card reveal">
+          <span class="past-year">2024</span>
+          <span class="past-icon">🛸</span>
+          <h4 class="past-title">ISS Expedition VII</h4>
+          <p class="past-desc">14-day micro-gravity science mission. 6 passengers.</p>
+          <span class="past-tag">✅ SUCCESS</span>
+        </div>
+        <div class="past-card reveal">
+          <span class="past-year">2025</span>
+          <span class="past-icon">🌙</span>
+          <h4 class="past-title">Dark Side Observer</h4>
+          <p class="past-desc">First tourist orbit over the lunar far side. Historic.</p>
+          <span class="past-tag">✅ SUCCESS</span>
+        </div>
+        <div class="past-card reveal">
+          <span class="past-year">2025</span>
+          <span class="past-icon">🔭</span>
+          <h4 class="past-title">Hubble Companion</h4>
+          <p class="past-desc">Formation flight alongside the Hubble Space Telescope.</p>
+          <span class="past-tag">✅ SUCCESS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>✦ © 2026 <strong>OrbitUI</strong> — Built by <a href="about.html">Ankit Raj Maurya</a> ✦ All rights reserved</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

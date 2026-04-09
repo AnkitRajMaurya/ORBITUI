@@ -1,93 +1,213 @@
-<!-- ========================= about.html ========================= -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Ankit Raj Maurya | OrbitUI</title>
+  <meta name="description" content="Full-stack developer from Muzaffarpur, Bihar. Skills include React, Node.js, Flutter, and more." />
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-<style>
-body{
-background:black;
-color:white;
-font-family:Poppins;
-}
-
-/* Navbar */
-nav{
-display:flex;justify-content:space-between;
-padding:15px 40px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-}
-nav h1{font-family:Orbitron;color:#00eaff;}
-
-/* Glass Card */
-.card{
-margin:20px;
-padding:25px;
-border-radius:15px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,0.1);
-transition:.3s;
-}
-.card:hover{box-shadow:0 0 20px #00eaff;}
-
-/* Timeline */
-.timeline{
-border-left:2px solid #00eaff;
-padding-left:20px;
-}
-</style>
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<nav>
-<h1>OrbitUI</h1>
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-</nav>
+  <!-- Page Transition Overlay -->
+  <div id="page-transition"></div>
 
-<h1 style="text-align:center;margin:20px;">About Me</h1>
+  <!-- Stars Canvas -->
+  <canvas id="stars-canvas"></canvas>
 
-<div class="card">
-<h2>Ankit Raj Maurya</h2>
-<p>"From Problem to Production-Ready"</p>
-<p>I'm a passionate full-stack developer from Muzaffarpur, Bihar. I specialize in building modern, scalable web and mobile applications with clean architecture and great user experience.</p>
-</div>
+  <!-- =====================================================================
+       NAVBAR
+  ====================================================================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">⊛ OrbitUI</a>
 
-<div class="card">
-<h3>Skills</h3>
-<p>Java, C, JavaScript</p>
-<p>HTML, CSS, React</p>
-<p>Node.js, Express, MongoDB</p>
-<p>Flutter, Android Development</p>
-<p>Git, GitHub, VS Code</p>
-</div>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
 
-<div class="card timeline">
-<h3>Education</h3>
-<p>Diploma in Computer Science Engineering (2024–2027)</p>
-<p>NRI Institute of Research & Technology</p>
-</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="missions.html">🚀 Missions</a></li>
+      <li><a href="gallery.html">🌌 Gallery</a></li>
+      <li><a href="booking.html">🎫 Booking</a></li>
+      <li><a href="about.html" class="active">👨‍💻 About</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="card timeline">
-<h3>Experience</h3>
-<p>Web Developer Intern - Tata Power Skill Development Institute</p>
-<p>Freelancer - Web & App Development</p>
-</div>
+  <!-- =====================================================================
+       ABOUT HERO / PROFILE
+  ====================================================================== -->
+  <section id="about-hero">
+    <div class="container">
+      <div class="profile-avatar reveal">👨‍💻</div>
+      <h1 class="profile-name reveal">Ankit Raj Maurya</h1>
+      <p class="profile-tagline reveal">"From Problem to Production-Ready"</p>
+      <p class="profile-bio reveal">
+        I'm a passionate full-stack developer from Muzaffarpur, Bihar. I build modern
+        web and mobile applications with clean code and great user experience.
+      </p>
+      <div class="profile-badges reveal">
+        <span class="badge">📍 Muzaffarpur, Bihar</span>
+        <span class="badge">🎓 CSE Diploma 2024–27</span>
+        <span class="badge">💻 Full-Stack Dev</span>
+        <span class="badge">📱 Flutter Dev</span>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Projects</h3>
-<p>Portfolio Website - Personal branding & showcase</p>
-<p>Weather App - Real-time weather data app</p>
-</div>
+  <!-- =====================================================================
+       SKILLS
+  ====================================================================== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Skills &amp; Technologies</h2>
+      <p class="section-subtitle reveal">Technologies I use to build things that matter</p>
 
+      <div class="skills-grid">
+        <div class="skill-chip reveal"><span class="icon">☕</span><span class="label">Java</span></div>
+        <div class="skill-chip reveal"><span class="icon">⚙️</span><span class="label">C</span></div>
+        <div class="skill-chip reveal"><span class="icon">🟨</span><span class="label">JavaScript</span></div>
+        <div class="skill-chip reveal"><span class="icon">🌐</span><span class="label">HTML</span></div>
+        <div class="skill-chip reveal"><span class="icon">🎨</span><span class="label">CSS</span></div>
+        <div class="skill-chip reveal"><span class="icon">⚛️</span><span class="label">React</span></div>
+        <div class="skill-chip reveal"><span class="icon">🟢</span><span class="label">Node.js</span></div>
+        <div class="skill-chip reveal"><span class="icon">🍃</span><span class="label">MongoDB</span></div>
+        <div class="skill-chip reveal"><span class="icon">🚂</span><span class="label">Express</span></div>
+        <div class="skill-chip reveal"><span class="icon">💙</span><span class="label">Flutter</span></div>
+        <div class="skill-chip reveal"><span class="icon">🤖</span><span class="label">Android</span></div>
+        <div class="skill-chip reveal"><span class="icon">🐙</span><span class="label">Git/GitHub</span></div>
+        <div class="skill-chip reveal"><span class="icon">💻</span><span class="label">VS Code</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       EDUCATION / EXPERIENCE TIMELINE
+  ====================================================================== -->
+  <section id="timeline">
+    <div class="container">
+      <h2 class="section-title reveal">Journey</h2>
+      <p class="section-subtitle reveal">Education &amp; Experience</p>
+
+      <!-- Tab Buttons -->
+      <div class="timeline-tabs reveal">
+        <button class="tab-btn active" data-tab="education">🎓 Education</button>
+        <button class="tab-btn" data-tab="experience">💼 Experience</button>
+      </div>
+
+      <!-- Education Tab -->
+      <div class="timeline-list active" id="tab-education">
+        <div class="tl-item reveal">
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+            <div class="tl-connector"></div>
+          </div>
+          <div class="tl-card">
+            <p class="tl-period">2024 – 2027</p>
+            <h3 class="tl-title">Diploma in Computer Science Engineering</h3>
+            <p class="tl-sub">NRI Institute of Research &amp; Technology</p>
+            <p class="tl-desc">
+              Pursuing a comprehensive diploma with focus on software development,
+              data structures, algorithms, and modern web technologies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Tab -->
+      <div class="timeline-list" id="tab-experience">
+        <div class="tl-item reveal">
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+            <div class="tl-connector"></div>
+          </div>
+          <div class="tl-card">
+            <p class="tl-period">2025 – Present</p>
+            <h3 class="tl-title">Web Developer Intern</h3>
+            <p class="tl-sub">Tata Power Skill Development Institute</p>
+            <p class="tl-desc">
+              Developed and maintained responsive web interfaces, collaborated with
+              cross-functional teams, and improved front-end performance.
+            </p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+            <div class="tl-connector"></div>
+          </div>
+          <div class="tl-card">
+            <p class="tl-period">2024 – Present</p>
+            <h3 class="tl-title">Freelancer</h3>
+            <p class="tl-sub">Self-Employed</p>
+            <p class="tl-desc">
+              Designing and developing websites and mobile apps for clients across
+              various industries with focus on UX and clean code.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PROJECTS
+  ====================================================================== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Projects</h2>
+      <p class="section-subtitle reveal">Things I've built</p>
+
+      <div class="projects-grid">
+
+        <div class="proj-card reveal">
+          <span class="proj-icon">🧑‍🚀</span>
+          <h3 class="proj-name">Portfolio Website</h3>
+          <p class="proj-desc">
+            A personal portfolio showcasing my skills, projects, and experience with
+            a modern, responsive design and smooth animations.
+          </p>
+        </div>
+
+        <div class="proj-card reveal">
+          <span class="proj-icon">🌤️</span>
+          <h3 class="proj-name">Weather App</h3>
+          <p class="proj-desc">
+            Real-time weather application that fetches live data from a public API
+            and displays temperature, humidity, and forecasts for any city.
+          </p>
+        </div>
+
+        <div class="proj-card reveal">
+          <span class="proj-icon">🚀</span>
+          <h3 class="proj-name">OrbitUI</h3>
+          <p class="proj-desc">
+            This very platform — a futuristic space tourism website demonstrating
+            advanced CSS animations and modern frontend architecture.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer>
+    <p>© 2026 <strong>OrbitUI</strong> — Built by <a href="about.html">Ankit Raj Maurya</a>. All rights reserved.</p>
+  </footer>
+
+  <!-- Global Script -->
+  <script src="main.js"></script>
 </body>
 </html>

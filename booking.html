@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Mission — OrbitUI</title>
+  <meta name="description" content="Book your seat to space with OrbitUI. Missions to the Moon, Mars, and ISS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="page-transition"></div>
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- =====================================================================
+       NAVBAR
+  ====================================================================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">⊛ OrbitUI</a>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="missions.html">🚀 Missions</a></li>
+      <li><a href="gallery.html">🌌 Gallery</a></li>
+      <li><a href="booking.html" class="active">🎫 Booking</a></li>
+      <li><a href="about.html">👨‍💻 About</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- =====================================================================
+       BOOKING HERO
+  ====================================================================== -->
+  <section class="gallery-hero" style="min-height: 35vh; padding-bottom: 0;">
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+      <div class="mission-badge reveal">🎫 &nbsp; RESERVATION SYSTEM</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.2rem,6vw,4.5rem); -webkit-text-fill-color:transparent; background:linear-gradient(135deg,#fff,#00d4ff,#a855f7); -webkit-background-clip:text; background-clip:text; margin-bottom:1rem;">
+        Book Your Mission
+      </h1>
+      <p class="section-subtitle reveal" style="max-width:600px;margin:0 auto 2rem;">
+        Select your destination, cabin class, and prepare for the ultimate journey beyond Earth.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BOOKING FORM SECTION
+  ====================================================================== -->
+  <section id="booking" style="padding-top: 2rem; background: none;">
+    <div class="container">
+      <div class="booking-form-wrap glass reveal" style="max-width: 800px; margin: 0 auto;">
+
+        <!-- Booking Form -->
+        <form id="booking-form" novalidate>
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="f-name">Full Name</label>
+              <input type="text" id="f-name" placeholder="Ankit Raj Maurya" />
+              <span class="error-msg" id="err-name">Please enter your name.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="f-email">Email Address</label>
+              <input type="email" id="f-email" placeholder="you@space.io" />
+              <span class="error-msg" id="err-email">Please enter a valid email.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="f-dest">Destination</label>
+              <select id="f-dest">
+                <option value="">Select destination…</option>
+                <option value="Moon">🌕 The Moon — $250,000</option>
+                <option value="Mars">🔴 Mars — $500,000</option>
+                <option value="ISS">🛸 ISS — $350,000</option>
+              </select>
+              <span class="error-msg" id="err-dest">Please select a destination.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="f-date">Launch Date</label>
+              <input type="date" id="f-date" />
+              <span class="error-msg" id="err-date">Please select a launch date.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="f-cabin">Cabin Class</label>
+              <select id="f-cabin">
+                <option value="">Select cabin…</option>
+                <option value="Economy">🪑 Economy</option>
+                <option value="Business">💼 Business</option>
+                <option value="Elite">🌌 Elite Zero Gravity</option>
+              </select>
+              <span class="error-msg" id="err-cabin">Please select a cabin class.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="f-passengers">Passengers</label>
+              <input type="number" id="f-passengers" min="1" max="6" placeholder="1" />
+              <span class="error-msg" id="err-passengers">1–6 passengers allowed.</span>
+            </div>
+
+            <div class="form-group full" style="margin-top: 1rem;">
+              <button type="submit" class="form-submit" id="launch-btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase;">
+                Launch Booking 🚀
+              </button>
+            </div>
+
+          </div>
+        </form>
+
+        <!-- Success Message (shown after valid submit) -->
+        <div id="success-msg">
+          <div class="success-icon">🚀</div>
+          <h3 class="success-title">Booking Confirmed!</h3>
+          <p class="success-text" id="success-detail">Your seat to space has been reserved. Prepare for launch!</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer>
+    <p>© 2026 <strong>OrbitUI</strong> — A project by <a href="about.html">Ankit Raj Maurya</a>. All rights reserved.</p>
+  </footer>
+
+  <!-- Global Script -->
+  <script src="main.js"></script>
+</body>
+</html>

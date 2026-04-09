@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — OrbitUI | Space Image Gallery</title>
+  <meta name="description" content="Browse stunning space photography — nebulae, planets, astronauts, and deep space imagery collected by OrbitUI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="page-transition"></div>
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">⊛ OrbitUI</a>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="missions.html">🚀 Missions</a></li>
+      <li><a href="gallery.html" class="active">🌌 Gallery</a></li>
+      <li><a href="booking.html">🎫 Booking</a></li>
+      <li><a href="about.html">👨‍💻 About</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="gallery-hero">
+    <div class="container" style="position:relative;z-index:2;text-align:center;padding-top:2rem;">
+      <div class="mission-badge reveal">📸 &nbsp; COSMIC PHOTO ARCHIVE</div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.2rem,6vw,4.5rem); -webkit-text-fill-color:transparent; background:linear-gradient(135deg,#fff,#00d4ff,#a855f7); -webkit-background-clip:text; background-clip:text; margin-bottom:1rem;">
+        Space Gallery
+      </h1>
+      <p class="section-subtitle reveal" style="max-width:600px;margin:0 auto 2rem;">
+        A window into the infinite cosmos. Every pixel tells a story stretching billions of light-years across space and time.
+        ✦ ✧ ⋆ ★ 🌌 ☄️ 🪐
+      </p>
+
+      <!-- Filter Tabs -->
+      <div class="gallery-filters reveal" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all">🌌 All</button>
+        <button class="filter-btn" data-filter="planets">🪐 Planets</button>
+        <button class="filter-btn" data-filter="nebula">🌫️ Nebulae</button>
+        <button class="filter-btn" data-filter="missions">🚀 Missions</button>
+        <button class="filter-btn" data-filter="earth">🌍 Earth</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY GRID ── -->
+  <section id="gallery-grid-section">
+    <div class="container">
+      <div class="gallery-grid" id="gallery-grid">
+
+        <!-- Using free NASA/ESA/Unsplash public domain image URLs -->
+
+        <div class="gallery-item reveal" data-cat="nebula" data-title="Crab Nebula" data-desc="A supernova remnant 6,500 light-years away ✦ Discovered 1054 AD">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800" alt="Crab Nebula" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🌫️</span>
+            <h4>Crab Nebula</h4>
+            <p>6,500 light-years away ✦</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="planets" data-title="Saturn's Rings" data-desc="Saturn's iconic ring system photographed by Cassini spacecraft ♄">
+          <img src="https://images.unsplash.com/photo-1614314107768-6018061b5b72?w=800" alt="Saturn Rings" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🪐</span>
+            <h4>Saturn</h4>
+            <p>Ring system ✦ Cassini photo ♄</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="missions" data-title="Apollo 17 Moonwalk" data-desc="Astronaut Harrison Schmitt collects lunar samples, December 1972 🌕">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800" alt="Apollo 17 Moonwalk" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🧑‍🚀</span>
+            <h4>Apollo 17</h4>
+            <p>Moonwalk · 1972 🌕 ★</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="earth" data-title="Blue Marble" data-desc="Earth photographed from Apollo 17, 1972 — The Blue Marble 🌍">
+          <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800" alt="Blue Marble Earth" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🌍</span>
+            <h4>Blue Marble</h4>
+            <p>Earth from Apollo 17 ✦ 🌍</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="nebula" data-title="Pillars of Creation" data-desc="Eagle Nebula — Star-forming columns 6,500 light-years away ✧">
+          <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800" alt="Pillars of Creation" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🌌</span>
+            <h4>Pillars of Creation</h4>
+            <p>Eagle Nebula ✧ HST Photo</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="planets" data-title="Mars Surface" data-desc="Martian terrain photographed by the Curiosity Rover 🔴">
+          <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=800" alt="Mars Surface" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🔴</span>
+            <h4>Mars Surface</h4>
+            <p>Curiosity Rover · Sol 3000 ✦</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="missions" data-title="ISS Over Earth" data-desc="International Space Station photographed from a departing Soyuz 🛸">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="ISS in orbit" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🛸</span>
+            <h4>ISS</h4>
+            <p>International Space Station ✦</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="earth" data-title="Aurora From ISS" data-desc="Aurora Borealis as seen from the International Space Station — a ribbon of green light over Earth ✨ 🌍">
+          <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800" alt="Aurora Borealis from ISS" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">✨</span>
+            <h4>Aurora From ISS</h4>
+            <p>Northern Lights · From orbit ✨ 🛸</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="nebula" data-title="Orion Nebula" data-desc="The Great Nebula in Orion, 1,344 light-years away ⭐ ✦">
+          <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800" alt="Orion Nebula" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">⭐</span>
+            <h4>Orion Nebula</h4>
+            <p>1,344 light-years ✦ Hubble</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="planets" data-title="Jupiter Great Storm" data-desc="Jupiter's Great Red Spot — a colossal storm system larger than Earth, raging for 350+ years 🌀">
+          <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?w=800" alt="Jupiter Great Red Spot" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🌀</span>
+            <h4>Jupiter</h4>
+            <p>Great Red Spot ✦ Juno spacecraft 🌀</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="missions" data-title="SpaceX Falcon 9" data-desc="Falcon 9 booster landing — reusable rocket revolution 🚀">
+          <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=800" alt="Falcon 9 Landing" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🚀</span>
+            <h4>Falcon 9</h4>
+            <p>Rocket landing ✦ SpaceX</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="earth" data-title="Nile River from Space" data-desc="The Nile River at night, glowing cities from ISS 🌍 ✦">
+          <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=800" alt="Nile River Night" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🌙</span>
+            <h4>Nile at Night</h4>
+            <p>From ISS ✦ City lights glow</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="nebula" data-title="Carina Nebula" data-desc="James Webb Space Telescope captures the Cosmic Cliffs of the Carina Nebula ✧">
+          <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800" alt="Carina Nebula" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🔭</span>
+            <h4>Carina Nebula</h4>
+            <p>James Webb Telescope ✧</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="nebula" data-title="Andromeda Galaxy" data-desc="Our closest galactic neighbor, 2.5 million light-years away 🌌">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800" alt="Andromeda Galaxy" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🌌</span>
+            <h4>Andromeda</h4>
+            <p>2.5M light-years away ✦</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="missions" data-title="Astronaut Spacewalk" data-desc="Free-flying untethered in space using the Manned Maneuvering Unit (MMU) 👨‍🚀">
+          <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800" alt="Untethered Spacewalk" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">👨‍🚀</span>
+            <h4>Spacewalk EVA</h4>
+            <p>Untethered flight ✦ 1984</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="planets" data-title="Supermassive Black Hole" data-desc="First ever image of a black hole at the center of galaxy M87 🕳️">
+          <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800" alt="M87 Black Hole" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gal-icon">🕳️</span>
+            <h4>M87 Black Hole</h4>
+            <p>Event Horizon Telescope ✦</p>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+    </div>
+  </section>
+
+  <!-- ── LIGHTBOX ── -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPACE FACTS ── -->
+  <section id="space-facts" style="background:radial-gradient(ellipse at 70% 50%, rgba(168,85,247,0.07) 0%, transparent 60%);">
+    <div class="container">
+      <h2 class="section-title reveal">🌠 Space Facts</h2>
+      <p class="section-subtitle reveal">Mind-bending truths about the cosmos ✦ ✧ ★ ⋆</p>
+      <div class="facts-grid">
+        <div class="fact-card reveal">
+          <div class="fact-symbol">☄️</div>
+          <h4 class="fact-title">Speed of Light</h4>
+          <p class="fact-body">Light travels 299,792,458 m/s. It takes just 8 minutes and 20 seconds to travel from the Sun to Earth.</p>
+        </div>
+        <div class="fact-card reveal">
+          <div class="fact-symbol">🌌</div>
+          <h4 class="fact-title">Observable Universe</h4>
+          <p class="fact-body">The observable universe is ~93 billion light-years in diameter, containing over 2 trillion galaxies.</p>
+        </div>
+        <div class="fact-card reveal">
+          <div class="fact-symbol">⭐</div>
+          <h4 class="fact-title">Stars in the Milky Way</h4>
+          <p class="fact-body">Our galaxy alone contains between 100 and 400 billion stars. The Sun is just one of them.</p>
+        </div>
+        <div class="fact-card reveal">
+          <div class="fact-symbol">🪐</div>
+          <h4 class="fact-title">Saturn Floats</h4>
+          <p class="fact-body">Saturn's density is so low (0.69 g/cm³) that it would float on water — if you had an ocean large enough.</p>
+        </div>
+        <div class="fact-card reveal">
+          <div class="fact-symbol">🌕</div>
+          <h4 class="fact-title">Moon's Distance</h4>
+          <p class="fact-body">The Moon is 384,400 km away. All 8 planets of the Solar System could fit in that gap simultaneously.</p>
+        </div>
+        <div class="fact-card reveal">
+          <div class="fact-symbol">🔭</div>
+          <h4 class="fact-title">Looking Back in Time</h4>
+          <p class="fact-body">When you look at a star 100 light-years away, you see it as it was 100 years ago. Telescopes are time machines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>✦ © 2026 <strong>OrbitUI</strong> — Built by <a href="about.html">Ankit Raj Maurya</a> ✦ All rights reserved</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
