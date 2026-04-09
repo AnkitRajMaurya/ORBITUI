@@ -149,6 +149,26 @@ const $$ = (sel) => document.querySelectorAll(sel);
 
   if (!navbar) return;
 
+  const navHrefLabelMap = {
+    'index.html': 'Home',
+    'missions.html': 'Missions',
+    'gallery.html': 'Gallery',
+    'booking.html': 'Booking',
+    'about.html': 'About',
+    'contact.html': 'Contact'
+  };
+
+  document.querySelectorAll('.nav-links a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && navHrefLabelMap[href]) {
+      link.textContent = navHrefLabelMap[href];
+    }
+  });
+
+  document.querySelectorAll('.nav-logo').forEach(link => {
+    link.textContent = 'OrbitUI';
+  });
+
   // Darken navbar on scroll
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);

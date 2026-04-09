@@ -133,12 +133,14 @@ body:hover #custom-cursor { opacity: 1; }
   position: fixed;
   top: 0; left: 0; right: 0;
   width: 100%;
+  max-width: 100vw;
   box-sizing: border-box;
   z-index: 1000;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   background: rgba(2, 3, 15, 0.6);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
@@ -150,6 +152,7 @@ body:hover #custom-cursor { opacity: 1; }
 }
 
 .nav-logo {
+  flex-shrink: 0;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
@@ -163,11 +166,21 @@ body:hover #custom-cursor { opacity: 1; }
 
 .nav-links {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  min-width: 0;
   gap: 2rem;
   list-style: none;
 }
 
+.nav-links li {
+  min-width: 0;
+}
+
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
@@ -176,6 +189,7 @@ body:hover #custom-cursor { opacity: 1; }
   letter-spacing: 1px;
   text-transform: none;
   position: relative;
+  white-space: nowrap;
   transition: color var(--transition);
 }
 
@@ -305,7 +319,7 @@ footer a:hover { color: var(--accent-purple); }
 /* =====================================================================
    9. RESPONSIVE — NAVBAR & MOBILE
    ===================================================================== */
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .navbar { padding: 1rem 1.5rem; }
   
   .hamburger { display: flex; }
@@ -313,7 +327,11 @@ footer a:hover { color: var(--accent-purple); }
   .nav-links {
     position: fixed;
     top: 68px; left: 0; right: 0;
+    width: 100%;
+    max-width: 100vw;
     flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
     background: rgba(2, 3, 15, 0.95);
     backdrop-filter: blur(20px);
     padding: 2rem;
@@ -321,6 +339,11 @@ footer a:hover { color: var(--accent-purple); }
     transform: translateY(-120%);
     transition: transform var(--transition);
     border-bottom: 1px solid var(--glass-border);
+  }
+
+  .nav-links a {
+    width: 100%;
+    white-space: normal;
   }
 
   .nav-links.open { transform: translateY(0); }
@@ -2617,4 +2640,3 @@ footer a:hover { color: var(--accent-purple); }
   section { padding: 2.5rem 0.65rem; }
 
 }
-
