@@ -4,17 +4,49 @@
 <head>
 <meta charset="UTF-8">
 <title>About</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+
 <style>
-body{background:black;color:white;font-family:Poppins;}
-nav{display:flex;justify-content:space-between;padding:15px 40px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);}
-.card{margin:20px;padding:20px;border-radius:15px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);}
+body{
+background:black;
+color:white;
+font-family:Poppins;
+}
+
+/* Navbar */
+nav{
+display:flex;justify-content:space-between;
+padding:15px 40px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+}
+nav h1{font-family:Orbitron;color:#00eaff;}
+
+/* Glass Card */
+.card{
+margin:20px;
+padding:25px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.1);
+transition:.3s;
+}
+.card:hover{box-shadow:0 0 20px #00eaff;}
+
+/* Timeline */
+.timeline{
+border-left:2px solid #00eaff;
+padding-left:20px;
+}
 </style>
 </head>
+
 <body>
 
 <nav>
-<h1 style="font-family:Orbitron;color:#00eaff;">OrbitUI</h1>
+<h1>OrbitUI</h1>
 <div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -22,27 +54,39 @@ nav{display:flex;justify-content:space-between;padding:15px 40px;background:rgba
 </div>
 </nav>
 
-<h1 style="text-align:center;">About Me</h1>
+<h1 style="text-align:center;margin:20px;">About Me</h1>
 
 <div class="card">
 <h2>Ankit Raj Maurya</h2>
 <p>"From Problem to Production-Ready"</p>
-<p>I'm a passionate full-stack developer from Muzaffarpur, Bihar.</p>
+<p>I'm a passionate full-stack developer from Muzaffarpur, Bihar. I specialize in building modern, scalable web and mobile applications with clean architecture and great user experience.</p>
 </div>
 
 <div class="card">
 <h3>Skills</h3>
-<p>Java, C, JavaScript, HTML, CSS, React, Node.js, MongoDB, Express, Flutter</p>
+<p>Java, C, JavaScript</p>
+<p>HTML, CSS, React</p>
+<p>Node.js, Express, MongoDB</p>
+<p>Flutter, Android Development</p>
+<p>Git, GitHub, VS Code</p>
 </div>
 
-<div class="card">
+<div class="card timeline">
 <h3>Education</h3>
-<p>Diploma in Computer Science Engineering</p>
+<p>Diploma in Computer Science Engineering (2024–2027)</p>
+<p>NRI Institute of Research & Technology</p>
+</div>
+
+<div class="card timeline">
+<h3>Experience</h3>
+<p>Web Developer Intern - Tata Power Skill Development Institute</p>
+<p>Freelancer - Web & App Development</p>
 </div>
 
 <div class="card">
-<h3>Experience</h3>
-<p>Web Developer Intern, Freelancer</p>
+<h3>Projects</h3>
+<p>Portfolio Website - Personal branding & showcase</p>
+<p>Weather App - Real-time weather data app</p>
 </div>
 
 </body>
