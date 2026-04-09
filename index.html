@@ -1,0 +1,210 @@
+<!-- ========================= index.html ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrbitUI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Poppins',sans-serif;
+color:#fff;
+background:black;
+overflow-x:hidden;
+}
+
+/* Animated space background */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa') center/cover no-repeat;
+animation:move 60s linear infinite;
+z-index:-2;
+}
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,20,0.6);
+z-index:-1;
+}
+@keyframes move{
+0%{transform:translateY(0);}
+100%{transform:translateY(-500px);}
+}
+
+/* Navbar */
+nav{
+position:sticky;top:0;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+}
+nav h1{font-family:'Orbitron';color:#00eaff;}
+nav a{margin:0 10px;color:#fff;text-decoration:none;}
+nav a:hover{color:#00eaff;}
+
+/* Hero */
+.hero{
+text-align:center;
+padding:100px 20px;
+}
+.hero h1{font-family:'Orbitron';font-size:3rem;}
+.hero button{
+margin-top:20px;
+padding:12px 30px;
+border-radius:30px;
+border:none;
+background:linear-gradient(45deg,#00eaff,#7b00ff);
+color:#fff;
+box-shadow:0 0 20px #00eaff;
+cursor:pointer;
+}
+
+/* Cards */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:40px;
+}
+.card{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+transition:.4s;
+}
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+.card .content{
+padding:20px;
+}
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #00eaff;
+}
+
+/* Form Glass */
+.form-box{
+margin:40px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+}
+form{
+display:grid;
+gap:10px;
+}
+input,select{
+padding:10px;
+border:none;
+border-radius:8px;
+}
+.btn{
+padding:12px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#00eaff,#7b00ff);
+color:white;
+cursor:pointer;
+}
+.success{display:none;color:#00ff9d;text-align:center;margin-top:10px;}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>OrbitUI</h1>
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+<h1>Book Your Seat to Space</h1>
+<p>Experience the future of travel beyond Earth</p>
+<button onclick="scrollForm()">Explore Destinations</button>
+</section>
+
+<section class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa">
+<div class="content">Moon<br>$250,000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1614729939124-032f0d4a4b82">
+<div class="content">Mars<br>$500,000</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580428180120-3aef6d3a6c38">
+<div class="content">ISS<br>$350,000</div>
+</div>
+</section>
+
+<section class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581093588401-22e1c6cbaef0">
+<div class="content">Economy</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1">
+<div class="content">Business</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1541872703-1cfa3c0e8b61">
+<div class="content">Elite Zero Gravity</div>
+</div>
+</section>
+
+<div class="form-box" id="form">
+<h2 style="text-align:center;">Reserve Your Seat</h2>
+<form id="booking">
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email Address" required>
+<select><option>Moon</option><option>Mars</option><option>ISS</option></select>
+<input type="date">
+<select><option>Economy</option><option>Business</option><option>Elite</option></select>
+<input type="number" placeholder="Passengers">
+<button class="btn">Launch Booking 🚀</button>
+<p class="success" id="success">🚀 Booking Successful!</p>
+</form>
+</div>
+
+<script>
+function scrollForm(){
+document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
+
+window.onload=()=>{
+document.getElementById("name").value="Astronaut";
+}
+
+document.getElementById("booking").addEventListener("submit",function(e){
+e.preventDefault();
+document.getElementById("success").style.display="block";
+});
+</script>
+
+</body>
+</html>
