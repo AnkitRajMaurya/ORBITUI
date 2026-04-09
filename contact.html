@@ -1,0 +1,45 @@
+<!-- ========================= contact.html ========================= -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+<style>
+body{background:black;color:white;font-family:Poppins;}
+nav{display:flex;justify-content:space-between;padding:15px 40px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);}
+form{display:flex;flex-direction:column;gap:10px;padding:20px;}
+input,textarea{padding:10px;border-radius:8px;border:none;}
+.btn{background:#00eaff;padding:10px;border:none;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<nav>
+<h1 style="font-family:Orbitron;color:#00eaff;">OrbitUI</h1>
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<h1 style="text-align:center;">Get in Touch</h1>
+
+<form onsubmit="sendMsg(event)">
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send Message</button>
+<p id="msg" style="display:none;color:#00ff9d;">Message Sent 🚀</p>
+</form>
+
+<script>
+function sendMsg(e){
+e.preventDefault();
+document.getElementById("msg").style.display="block";
+}
+</script>
+
+</body>
+</html>
