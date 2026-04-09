@@ -4,19 +4,58 @@
 <head>
 <meta charset="UTF-8">
 <title>Contact</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+
 <style>
-body{background:black;color:white;font-family:Poppins;}
-nav{display:flex;justify-content:space-between;padding:15px 40px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);}
-form{display:flex;flex-direction:column;gap:10px;padding:20px;}
-input,textarea{padding:10px;border-radius:8px;border:none;}
-.btn{background:#00eaff;padding:10px;border:none;cursor:pointer;}
+body{
+background:black;
+color:white;
+font-family:Poppins;
+}
+
+/* Navbar */
+nav{
+display:flex;justify-content:space-between;
+padding:15px 40px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+}
+nav h1{font-family:Orbitron;color:#00eaff;}
+
+.card{
+margin:20px;
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+padding:20px;
+}
+input,textarea{
+padding:10px;
+border:none;
+border-radius:8px;
+}
+.btn{
+background:linear-gradient(45deg,#00eaff,#7b00ff);
+padding:10px;
+border:none;
+cursor:pointer;
+color:white;
+}
 </style>
 </head>
+
 <body>
 
 <nav>
-<h1 style="font-family:Orbitron;color:#00eaff;">OrbitUI</h1>
+<h1>OrbitUI</h1>
 <div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -26,13 +65,25 @@ input,textarea{padding:10px;border-radius:8px;border:none;}
 
 <h1 style="text-align:center;">Get in Touch</h1>
 
+<div class="card">
+<p>Email: ankit5242raj1@outlook.com</p>
+<p>Phone: +91 9279057573</p>
+<p>Location: Muzaffarpur, Bihar, India</p>
+</div>
+
 <form onsubmit="sendMsg(event)">
-<input placeholder="Name">
-<input placeholder="Email">
+<input placeholder="Name" required>
+<input placeholder="Email" required>
 <textarea placeholder="Message"></textarea>
 <button class="btn">Send Message</button>
 <p id="msg" style="display:none;color:#00ff9d;">Message Sent 🚀</p>
 </form>
+
+<div class="card">
+<p><a href="https://github.com/AnkitRajMaurya" target="_blank">GitHub</a></p>
+<p><a href="https://ankitrajmaurya.github.io/Portfolio/" target="_blank">Portfolio</a></p>
+<p><a href="https://in.linkedin.com/in/ankitrajmaurya" target="_blank">LinkedIn</a></p>
+</div>
 
 <script>
 function sendMsg(e){
