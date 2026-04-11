@@ -47,18 +47,20 @@
   ====================================================================== -->
   <section id="about-hero">
     <div class="container">
-      <div class="profile-avatar reveal">👨‍💻</div>
-      <h1 class="profile-name reveal">Ankit Raj Maurya</h1>
-      <p class="profile-tagline reveal">"From Problem to Production-Ready"</p>
+      <div class="profile-avatar reveal">⊛</div>
+      <h1 class="profile-name reveal">OrbitUI</h1>
+      <p class="profile-tagline reveal">A Futuristic Space Tourism Experience</p>
       <p class="profile-bio reveal">
-        I'm a passionate full-stack developer from Muzaffarpur, Bihar. I build modern
-        web and mobile applications with clean code and great user experience.
+        OrbitUI is a demo platform showcasing modern frontend design, immersive motion,
+        and accessible interactions. Built as a static-first site with optional Node.js
+        APIs for forms and small services, it demonstrates responsive layouts,
+        micro-interactions, and lightweight performance optimizations.
       </p>
       <div class="profile-badges reveal">
-        <span class="badge">📍 Muzaffarpur, Bihar</span>
-        <span class="badge">🎓 CSE Diploma 2024–27</span>
-        <span class="badge">💻 Full-Stack Dev</span>
-        <span class="badge">📱 Flutter Dev</span>
+        <span class="badge">🌐 Static-First</span>
+        <span class="badge">♿ Accessibility</span>
+        <span class="badge">📱 Responsive</span>
+        <span class="badge">🧩 Modular UI</span>
       </div>
     </div>
   </section>
@@ -68,92 +70,94 @@
   ====================================================================== -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title reveal">Skills &amp; Technologies</h2>
-      <p class="section-subtitle reveal">Technologies I use to build things that matter</p>
+      <h2 class="section-title reveal">Tech Stack</h2>
+      <p class="section-subtitle reveal">What OrbitUI is built with</p>
 
       <div class="skills-grid">
-        <div class="skill-chip reveal"><span class="icon">☕</span><span class="label">Java</span></div>
-        <div class="skill-chip reveal"><span class="icon">⚙️</span><span class="label">C</span></div>
-        <div class="skill-chip reveal"><span class="icon">🟨</span><span class="label">JavaScript</span></div>
-        <div class="skill-chip reveal"><span class="icon">🌐</span><span class="label">HTML</span></div>
-        <div class="skill-chip reveal"><span class="icon">🎨</span><span class="label">CSS</span></div>
-        <div class="skill-chip reveal"><span class="icon">⚛️</span><span class="label">React</span></div>
-        <div class="skill-chip reveal"><span class="icon">🟢</span><span class="label">Node.js</span></div>
-        <div class="skill-chip reveal"><span class="icon">🍃</span><span class="label">MongoDB</span></div>
-        <div class="skill-chip reveal"><span class="icon">🚂</span><span class="label">Express</span></div>
-        <div class="skill-chip reveal"><span class="icon">💙</span><span class="label">Flutter</span></div>
-        <div class="skill-chip reveal"><span class="icon">🤖</span><span class="label">Android</span></div>
-        <div class="skill-chip reveal"><span class="icon">🐙</span><span class="label">Git/GitHub</span></div>
-        <div class="skill-chip reveal"><span class="icon">💻</span><span class="label">VS Code</span></div>
+        <div class="skill-chip reveal"><span class="icon">🌐</span><span class="label">Static HTML/CSS/JS</span></div>
+        <div class="skill-chip reveal"><span class="icon">⚛️</span><span class="label">React (optional components)</span></div>
+        <div class="skill-chip reveal"><span class="icon">🟢</span><span class="label">Node.js + Express (API)</span></div>
+        <div class="skill-chip reveal"><span class="icon">🍃</span><span class="label">MongoDB (optional)</span></div>
+        <div class="skill-chip reveal"><span class="icon">📱</span><span class="label">Flutter (mobile demos)</span></div>
+        <div class="skill-chip reveal"><span class="icon">♿</span><span class="label">Accessibility-first</span></div>
+        <div class="skill-chip reveal"><span class="icon">🚀</span><span class="label">Performance optimised</span></div>
+        <div class="skill-chip reveal"><span class="icon">☁️</span><span class="label">Deployable to Netlify / Vercel / Heroku</span></div>
       </div>
     </div>
   </section>
 
   <!-- =====================================================================
-       EDUCATION / EXPERIENCE TIMELINE
+       BACKEND & ENVIRONMENT
+  ====================================================================== -->
+  <section id="backend-env">
+    <div class="container">
+      <h2 class="section-title reveal">Backend &amp; Environment</h2>
+      <p class="section-subtitle reveal">Architecture, APIs, and developer setup for OrbitUI</p>
+
+      <div class="backend-env-grid">
+        <div class="backend-env-card reveal">
+          <span class="backend-env-icon">🧭</span>
+          <h3 class="backend-env-title">Architecture</h3>
+          <p class="backend-env-text">
+            OrbitUI uses a static-first frontend (vanilla HTML/CSS/JS) with an
+            optional Node.js/Express backend for form handling and light APIs.
+            The project is structured to be easily deployed as a static site
+            while allowing a small server for features that require dynamic
+            behavior (contact form, simple data endpoints).
+          </p>
+        </div>
+
+        <div class="backend-env-card reveal">
+          <span class="backend-env-icon">🔌</span>
+          <h3 class="backend-env-title">APIs</h3>
+          <p class="backend-env-text">
+            Provided endpoints (demo):
+          </p>
+          <ul class="backend-env-list">
+            <li><strong>GET</strong> <code>/api/about</code> — returns JSON about the site and author</li>
+            <li><strong>POST</strong> <code>/api/contact</code> — accepts contact JSON payloads (logs to server)</li>
+          </ul>
+        </div>
+
+        <div class="backend-env-card reveal">
+          <span class="backend-env-icon">⚙️</span>
+          <h3 class="backend-env-title">Environment &amp; Security</h3>
+          <p class="backend-env-text">
+            Configuration is loaded from environment variables (see <code>backend/.env</code>).
+            This demo stores no sensitive data and logs submissions to console; for
+            production, add validation, persistent storage, authentication, and
+            rate-limiting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       ARCHITECTURE & CONTRIBUTING
   ====================================================================== -->
   <section id="timeline">
     <div class="container">
-      <h2 class="section-title reveal">Journey</h2>
-      <p class="section-subtitle reveal">Education &amp; Experience</p>
+      <h2 class="section-title reveal">Architecture &amp; How to Run</h2>
+      <p class="section-subtitle reveal">Developer notes, local setup, and contribution guidance</p>
 
-      <!-- Tab Buttons -->
-      <div class="timeline-tabs reveal">
-        <button class="tab-btn active" data-tab="education">🎓 Education</button>
-        <button class="tab-btn" data-tab="experience">💼 Experience</button>
+      <div class="tl-card reveal">
+        <h3 class="tl-title">Local Development</h3>
+        <p class="tl-desc">Run the optional backend for API endpoints and serve the static frontend directly from the project root.</p>
+        <pre class="tl-code">cd backend
+npm install
+npm start</pre>
+        <p class="tl-desc">Open <strong>http://localhost:3000</strong> — the static site is served alongside the API.</p>
       </div>
 
-      <!-- Education Tab -->
-      <div class="timeline-list active" id="tab-education">
-        <div class="tl-item reveal">
-          <div class="tl-line">
-            <div class="tl-dot"></div>
-            <div class="tl-connector"></div>
-          </div>
-          <div class="tl-card">
-            <p class="tl-period">2024 – 2027</p>
-            <h3 class="tl-title">Diploma in Computer Science Engineering</h3>
-            <p class="tl-sub">NRI Institute of Research &amp; Technology</p>
-            <p class="tl-desc">
-              Pursuing a comprehensive diploma with focus on software development,
-              data structures, algorithms, and modern web technologies.
-            </p>
-          </div>
-        </div>
+      <div class="tl-card reveal">
+        <h3 class="tl-title">Contribution &amp; Deployment</h3>
+        <p class="tl-desc">Contributions are welcome. For static deployments prefer Netlify or Vercel. For backend-enabled deployments use Heroku, Render, or a VPS and set environment variables securely (do not commit `.env`).</p>
       </div>
 
-      <!-- Experience Tab -->
-      <div class="timeline-list" id="tab-experience">
-        <div class="tl-item reveal">
-          <div class="tl-line">
-            <div class="tl-dot"></div>
-            <div class="tl-connector"></div>
-          </div>
-          <div class="tl-card">
-            <p class="tl-period">2025 – Present</p>
-            <h3 class="tl-title">Web Developer Intern</h3>
-            <p class="tl-sub">Tata Power Skill Development Institute</p>
-            <p class="tl-desc">
-              Developed and maintained responsive web interfaces, collaborated with
-              cross-functional teams, and improved front-end performance.
-            </p>
-          </div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-line">
-            <div class="tl-dot"></div>
-            <div class="tl-connector"></div>
-          </div>
-          <div class="tl-card">
-            <p class="tl-period">2024 – Present</p>
-            <h3 class="tl-title">Freelancer</h3>
-            <p class="tl-sub">Self-Employed</p>
-            <p class="tl-desc">
-              Designing and developing websites and mobile apps for clients across
-              various industries with focus on UX and clean code.
-            </p>
-          </div>
-        </div>
+      <div class="tl-card reveal">
+        <h3 class="tl-title">Data &amp; Privacy</h3>
+        <p class="tl-desc">OrbitUI is a demo; contact submissions are not persisted by default. For production, integrate secure storage, email delivery, and GDPR-compliant handling where required.</p>
       </div>
 
     </div>
@@ -164,36 +168,33 @@
   ====================================================================== -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title reveal">Projects</h2>
-      <p class="section-subtitle reveal">Things I've built</p>
+      <h2 class="section-title reveal">Site Features</h2>
+      <p class="section-subtitle reveal">What OrbitUI provides to visitors</p>
 
       <div class="projects-grid">
 
         <div class="proj-card reveal">
-          <span class="proj-icon">🧑‍🚀</span>
-          <h3 class="proj-name">Portfolio Website</h3>
-          <p class="proj-desc">
-            A personal portfolio showcasing my skills, projects, and experience with
-            a modern, responsive design and smooth animations.
-          </p>
+          <span class="proj-icon">✨</span>
+          <h3 class="proj-name">Immersive UI &amp; Motion</h3>
+          <p class="proj-desc">Advanced CSS animations, smooth page transitions, and a starfield canvas for atmosphere.</p>
         </div>
 
         <div class="proj-card reveal">
-          <span class="proj-icon">🌤️</span>
-          <h3 class="proj-name">Weather App</h3>
-          <p class="proj-desc">
-            Real-time weather application that fetches live data from a public API
-            and displays temperature, humidity, and forecasts for any city.
-          </p>
+          <span class="proj-icon">📷</span>
+          <h3 class="proj-name">Gallery</h3>
+          <p class="proj-desc">Responsive media gallery showcasing destinations and mission imagery with lightbox behavior.</p>
         </div>
 
         <div class="proj-card reveal">
-          <span class="proj-icon">🚀</span>
-          <h3 class="proj-name">OrbitUI</h3>
-          <p class="proj-desc">
-            This very platform — a futuristic space tourism website demonstrating
-            advanced CSS animations and modern frontend architecture.
-          </p>
+          <span class="proj-icon">🎫</span>
+          <h3 class="proj-name">Booking Flow</h3>
+          <p class="proj-desc">A demo booking interface that validates input client-side and can be wired to a backend for persistence.</p>
+        </div>
+
+        <div class="proj-card reveal">
+          <span class="proj-icon">✉️</span>
+          <h3 class="proj-name">Contact &amp; APIs</h3>
+          <p class="proj-desc">Contact form posts to <code>/api/contact</code>; basic about info available at <code>/api/about</code> for integrations.</p>
         </div>
 
       </div>
