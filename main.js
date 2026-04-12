@@ -54,8 +54,9 @@ const $$ = (sel) => document.querySelectorAll(sel);
     const size = Math.random() * 300 + 200;
     orb.style.width = `${size}px`;
     orb.style.height = `${size}px`;
-    orb.style.left = `${Math.random() * 100}vw`;
-    orb.style.top = `${Math.random() * 100}vh`;
+    /* Keep blurred orbs inset so filter blur does not widen horizontal overflow */
+    orb.style.left = `${Math.random() * 70 + 15}vw`;
+    orb.style.top = `${Math.random() * 70 + 15}vh`;
     orb.style.background = `radial-gradient(circle, ${colors[i % colors.length]}, transparent 70%)`;
     orb.style.animationDelay = `${Math.random() * 5}s`;
     orb.style.animationDuration = `${Math.random() * 10 + 15}s`;
@@ -176,9 +177,21 @@ const $$ = (sel) => document.querySelectorAll(sel);
 
   // Mobile hamburger
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
+    const toggleMenu = () => {
       hamburger.classList.toggle('open');
       navLinks.classList.toggle('open');
+    };
+
+    hamburger.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleMenu();
+    });
+
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
     });
 
     // Close menu when a link is clicked on mobile
